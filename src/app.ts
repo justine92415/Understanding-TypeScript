@@ -21,6 +21,10 @@ type Numeric = number | boolean;
 
 type Universal = Combinable & Numeric;
 
+function add(a: number, b: number): number;
+function add(a: string, b: string): string;
+function add(a: string, b: number): string;
+function add(a: number, b: string): string;
 function add(a: Combinable, b: Combinable) {
     if (typeof a === 'string' || typeof b === 'string') {
         return a.toString() + b.toString(); // 當有其中一個為 string 類型就做字串相加
@@ -28,6 +32,10 @@ function add(a: Combinable, b: Combinable) {
         return a + b; // 當兩個皆為 number 類型的話就做數字相加
     }
 }
+
+const result = add('Hi', 'I am Justine');
+
+result.toLowerCase();
 
 type UnknownEmployee = Employee | Admin;
 
@@ -116,3 +124,16 @@ const errorEmail: ErrorContainer = {
 const errorPhone: ErrorContainer = {
     phone: 'Not a valid phone!',
 };
+
+const fetchedUserData = {
+    id: 'u1',
+    name: 'Justine',
+    // job: { title: 'CEO', description: 'My own company' },
+};
+
+// console.log(fetchedUserData?.job?.title);
+
+const userInput = 'undefined';
+const storeData = userInput ?? 'DEFAULT'; // 當 userInput為 undefined 或 null 時則會使用 'DEFAULT'
+
+console.log(storeData); // 'DEFAULT'

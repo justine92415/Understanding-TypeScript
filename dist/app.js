@@ -12,6 +12,8 @@ function add(a, b) {
         return a + b;
     }
 }
+const result = add('Hi', 'I am Justine');
+result.toLowerCase();
 function printEmployeeInformatin(emp) {
     console.log('Name: ' + emp.name);
     if ('privileges' in emp) {
@@ -59,3 +61,10 @@ const errorEmail = {
 const errorPhone = {
     phone: 'Not a valid phone!',
 };
+const fetchedUserData = {
+    id: 'u1',
+    name: 'Justine',
+};
+const userInput = 'undefined';
+const storeData = userInput !== null && userInput !== void 0 ? userInput : 'DEFAULT';
+console.log(storeData);
