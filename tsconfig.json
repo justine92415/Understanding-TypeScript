@@ -103,6 +103,7 @@
     "exclude": [
         "00_first acquaintance TS",
         "02_TypeScript Basic & Basic Types",
-        "03_The TypeScript Compiler (and its Configuration)"
+        "03_The TypeScript Compiler (and its Configuration)",
+        "05_Classes and Interfaces"
     ]
 }

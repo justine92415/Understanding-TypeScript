@@ -1,24 +1,61 @@
 "use strict";
-let add;
-add = (n1, n2) => {
-    return n1 + n2;
+const e1 = {
+    name: 'Justine',
+    privileges: ['create-server'],
+    starDate: new Date(),
 };
-class Person {
-    constructor(n) {
-        this.age = 30;
-        if (n) {
-            this.name = n;
-        }
+function add(a, b) {
+    if (typeof a === 'string' || typeof b === 'string') {
+        return a.toString() + b.toString();
     }
-    greet(phrase) {
-        if (this.name) {
-            console.log(phrase + ' ' + this.name);
-        }
-        else {
-            console.log('Hi');
-        }
+    else {
+        return a + b;
     }
 }
-let user1;
-user1 = new Person();
-user1.greet('Hi there - I am');
+function printEmployeeInformatin(emp) {
+    console.log('Name: ' + emp.name);
+    if ('privileges' in emp) {
+        console.log('Privileges: ' + emp.privileges);
+    }
+}
+class Car {
+    drive() {
+        console.log('Driving...');
+    }
+}
+class Truck {
+    drive() {
+        console.log('Driving a truck ...');
+    }
+    loadCargo(amount) {
+        console.log('Loading cargo ...' + amount);
+    }
+}
+function useVehicle(vehicle) {
+    vehicle.drive();
+    if (vehicle instanceof Truck) {
+        vehicle.loadCargo(1000);
+    }
+}
+function moveAnimal(animal) {
+    let speed;
+    switch (animal.type) {
+        case 'bird':
+            speed = animal.flyingSpeed;
+            break;
+        case 'horse':
+            speed = animal.runningSpeeed;
+            break;
+    }
+    console.log('Moving at speed: ' + speed);
+}
+moveAnimal({ type: 'bird', flyingSpeed: 10 });
+const userInputElement = document.getElementById('user-input');
+userInputElement.value = 'Hi I am Justine 😀';
+const errorEmail = {
+    email: 'Not a valid email!',
+    username: 'Must start with a character!',
+};
+const errorPhone = {
+    phone: 'Not a valid phone!',
+};
