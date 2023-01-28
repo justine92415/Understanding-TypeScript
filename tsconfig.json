@@ -106,6 +106,7 @@
         "03_The TypeScript Compiler (and its Configuration)",
         "05_Classes and Interfaces",
         "06_Advanced Types",
-        "07_Generics"
+        "07_Generics",
+        "08_Decorators"
     ]
 }
